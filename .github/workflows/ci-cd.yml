@@ -2,8 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build-and-push:
@@ -12,6 +11,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      # Add this step to verify that secrets exist
+      - name: Check secrets existence
+        run: |
+          if [ -z "${{ secrets.DOCKER_USERNAME }}" ]; then
+            echo "DOCKER_USERNAME secret is missing"
+            exit 1
+          else
+            echo "DOCKER_USERNAME is set"
+          fi
+
+          if [ -z "${{ secrets.DOCKER_PASSWORD }}" ]; then
+            echo "DOCKER_PASSWORD secret is missing"
+            exit 1
+          else
+            echo "DOCKER_PASSWORD is set"
+          fi
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3

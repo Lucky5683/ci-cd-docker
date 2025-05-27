@@ -1,78 +1,37 @@
-Project - CI/CD Pipeline Setup
-Overview
-This project demonstrates a complete CI/CD pipeline for a Node.js application using Docker, GitHub Actions, and Minikube. The pipeline automates building a Docker image, running tests, pushing the image to Docker Hub, and deploying the application locally on Minikube.
+# Project1 - CI/CD Pipeline with Docker and Kubernetes
 
-Technologies Used
-Node.js (Express framework)
+## Overview
 
-Docker (Containerization)
+This project demonstrates a complete CI/CD pipeline that builds, tests, and deploys a Node.js application using:
 
-GitHub Actions (CI/CD workflows)
+- **Docker** for containerization  
+- **GitHub Actions** for CI/CD automation  
+- **Kubernetes (Minikube)** for deployment  
 
-Docker Hub (Image repository)
+---
 
-Minikube (Local Kubernetes cluster)
+## Features
 
-Project Structure
-Dockerfile - Defines the Docker image build process.
+- Automated Docker image build and push to Docker Hub  
+- Automated testing in GitHub Actions workflow  
+- Kubernetes deployment and service manifests included  
+- Easy to deploy on local Kubernetes cluster (Minikube) or any K8s cluster  
 
-docker-compose.yml - (If applicable) Manages multi-container setup.
+---
 
-.github/workflows/ci-cd.yml - GitHub Actions workflow for CI/CD.
+## Prerequisites
 
-index.js - Main Node.js application file.
+- Docker installed and running  
+- Minikube installed and running (for local Kubernetes cluster)  
+- kubectl CLI installed  
+- GitHub account with secrets configured for Docker Hub credentials (`DOCKER_USERNAME` and `DOCKER_PASSWORD`)  
 
-CI/CD Pipeline
-The GitHub Actions workflow automates the following steps on every push:
+---
 
-Run Tests: Executes unit tests (if any).
+## Getting Started
 
-Build Docker Image: Builds the Docker image of the app.
+### Clone the repository
 
-Push Image: Pushes the image to Docker Hub under lucky5683/project1:latest.
-
-Deploy Locally: Pulls and runs the Docker image on a local Minikube Kubernetes cluster.
-
-How to Run Locally
-Prerequisites
-Docker installed and running
-
-Minikube installed and started
-
-Kubernetes CLI (kubectl) configured
-
-Steps
-Start Minikube:
-
-bash
-Copy
-Edit
-minikube start
-Deploy the app to Minikube:
-
-bash
-Copy
-Edit
-kubectl apply -f deployment.yaml
-Expose the service and get the URL:
-
-bash
-Copy
-Edit
-minikube service project1-deployment --url
-Open the URL in your browser to access the running app.
-
-Deliverables
-Docker Image:
-Available at Docker Hub repository
-
-GitHub Actions Workflow:
-Located in .github/workflows/ci-cd.yml in the GitHub repo
-
-Minikube Deployment:
-App running on Minikube accessible via provided service URL
-
-Docker Hub Image Page:
-
-Conclusion
-This project showcases a full CI/CD cycle integrating containerization and Kubernetes deployment for efficient development and delivery. The automation ensures rapid feedback and consistent deployment environments.
+```bash
+git clone https://github.com/<your-username>/project1.git
+cd project1

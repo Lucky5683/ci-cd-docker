@@ -118,7 +118,7 @@ Replace `<service-name>` with the name defined in your `service.yml` file.
 
 ## Authors
 
-* Your Name — [GitHub profile](https://github.com/Lucky5683)
+* Dinesh — [GitHub profile](https://github.com/Lucky5683)
 ---
 
 ## License

@@ -125,8 +125,3 @@ Replace `<service-name>` with the name defined in your `service.yml` file.
 
 This project is licensed under the MIT License.
 
-```
-
----
-
-```

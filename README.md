@@ -129,7 +129,4 @@ This project is licensed under the MIT License.
 
 ---
 
-Just replace `<your-username>` with your actual GitHub username before pushing.
-
-If you want, I can help you push it to your GitHub repo as well!
 ```
